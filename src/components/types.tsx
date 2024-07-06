@@ -91,6 +91,7 @@ export type IssueProps = {
   status: Status;
   createdAt: DateTime;
   userData?: string;
+  user?: UserProps;
 };
 
 export type SearchParamsProps = {
@@ -99,27 +100,31 @@ export type SearchParamsProps = {
   issues?: IssueProps | any;
 };
 
-export type UserProps = {
-  id: string;
-  name: string;
-  email: string;
-  emailVerified: string;
-  image?: string;
-  accounts: any;
-  sessions: any;
-  assignedIssues: any;
-} | any;
+export type UserProps =
+  | {
+      id: string;
+      name: string;
+      email: string;
+      emailVerified: string;
+      image?: string;
+      accounts: any;
+      sessions: any;
+      assignedIssues: any;
+    }
+  | any;
 
-export type IssueDataProps = {
-  id?: string;
-  caption: string;
-  description: string;
-  status?: Status;
-  createdAt?: DateTime;
-  updatedAt?: DateTime;
-  userData?: string;
-  user?: UserProps | null;
-} | any;
+export type IssueDataProps =
+  | {
+      id?: string;
+      caption: string;
+      description: string;
+      status?: Status;
+      createdAt?: DateTime;
+      updatedAt?: DateTime;
+      userData?: string;
+      user?: UserProps | null;
+    }
+  | any;
 
 export type DetailsProps = {
   issueData: IssueDataProps;

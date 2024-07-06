@@ -3,15 +3,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { IssueProps, statusDisplay } from "../types";
 import UserImage from "./userImage";
-import { fetchLatestIssues } from "@/utils/issues";
 
-export default async function LatestIssues() {
-  const recentIssues = await fetchLatestIssues();
-
+export default function LatestIssues({ recentIssues }: IssueProps | any) {
   return (
     <Card className="w-[100%] lg:w-[65%] xl:w-[100%] border-gray-300 border-[2px] rounded-[10px] px-3">
       <CardHeader className="mb-[-15px]">
-        <CardTitle className={`${fontMedium.className} text-lg mb-5 text-center sm:text-left`}>
+        <CardTitle
+          className={`${fontMedium.className} text-lg mb-5 text-center sm:text-left`}
+        >
           Recent Issues
         </CardTitle>
       </CardHeader>

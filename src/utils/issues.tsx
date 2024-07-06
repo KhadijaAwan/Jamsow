@@ -19,21 +19,21 @@ export const openIssues = async () => {
 };
 
 export const progressIssues = async () => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/progress`, { cache: "no-store" });
+  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/progress`);
   return response.ok ? response.json() : "Failed to get progress issues!";
 };
 
 export const reviewIssues = async () => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/review`, { cache: "no-store" });
+  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/review`);
   return response.ok ? response.json() : "Failed to get review issues!";
 };
 
 export const holdIssues = async () => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/hold`, { cache: "no-store" });
+  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/hold`);
   return response.ok ? response.json() : "Failed to get hold issues!";
 };
 
 export const closedIssues = async () => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/closed`, { cache: "no-store" });
+  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/issues/closed`);
   return response.ok ? response.json() : "Failed to get closed issues!";
 };

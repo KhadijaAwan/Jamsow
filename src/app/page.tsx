@@ -1,3 +1,5 @@
+export const revalidate = 8;
+
 import HomeComponent from "@/components/home";
 import { fetchLatestIssues } from "@/utils/issues";
 import {

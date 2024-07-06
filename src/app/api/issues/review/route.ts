@@ -1,7 +1,7 @@
 import prisma from "@/utils/connection";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const inReview = await prisma.issue.count({
         where: { status: 'IN_REVIEW' },

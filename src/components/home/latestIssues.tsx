@@ -16,7 +16,7 @@ export default async function LatestIssues() {
         </CardTitle>
       </CardHeader>
 
-      {recentIssues?.map((recentIssue: IssueProps, index: number) => (
+      {recentIssues.map((recentIssue: IssueProps, index: number) => (
         <CardContent
           className={`${
             index > 0 ? "mt-4" : null

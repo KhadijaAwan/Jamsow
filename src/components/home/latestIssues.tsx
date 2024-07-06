@@ -1,18 +1,12 @@
-import prisma from "@/utils/connection";
 import { fontMedium } from "../styles";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { statusDisplay } from "../types";
 import UserImage from "./userImage";
+import { fetchLatestIssues } from "@/utils/issues";
 
 export default async function LatestIssues() {
-  const recentIssues = await prisma.issue.findMany({
-    orderBy: { createdAt: "desc" },
-    take: 5,
-    include: {
-      user: true,
-    },
-  });
+  const recentIssues = await fetchLatestIssues();
 
   return (
     <Card className="w-[100%] lg:w-[65%] xl:w-[100%] border-gray-300 border-[2px] rounded-[10px] px-3">
@@ -22,7 +16,7 @@ export default async function LatestIssues() {
         </CardTitle>
       </CardHeader>
 
-      {recentIssues.map((recentIssue, index: number) => (
+      {recentIssues?.map((recentIssue, index: number) => (
         <CardContent
           className={`${
             index > 0 ? "mt-4" : null

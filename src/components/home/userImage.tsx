@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 export default function UserImage({ image }: { image: string }) {
   return (
     <Avatar>
-      <AvatarImage src={image} />
+      <AvatarImage src={image} alt="user-image"/>
       <AvatarFallback>User</AvatarFallback>
     </Avatar>
   );

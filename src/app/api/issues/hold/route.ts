@@ -1,6 +1,8 @@
 import prisma from "@/utils/connection";
 import { NextResponse } from "next/server";
 
+export const revalidate = 0;
+
 export async function GET(request: Request) {
   try {
     const onHold = await prisma.issue.count({

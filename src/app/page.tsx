@@ -18,5 +18,3 @@ export default async function Home() {
 
   return <HomeComponent recentIssues={recentIssues} open={open} inProgress={inProgress} inReview={inReview} onHold={onHold} closed={closed}/>
 }
-
-export const dynamic = 'force-dynamic';

@@ -16,7 +16,7 @@ export default function Header() {
           alt="Jamsow-logo"
           className="rounded-full hover:cursor-pointer"
         />
-        <h1 className="ml-2 hover:cursor-pointer">Jamsow</h1>
+        <h1 className="ml-2 mt-2 hover:cursor-pointer">Jamsow</h1>
       </Link>
 
       <div className="flex items-center">
